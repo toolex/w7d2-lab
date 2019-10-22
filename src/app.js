@@ -4,12 +4,15 @@ document.addEventListener("DOMContentLoaded", () => {
   new Vue({
     el: "#app",
     data: {
-      countries: null
+      countries: []
     },
     computed: {
       totalPopulation: function () {
         return this.countries.reduce((runningTotal, country) => runningTotal + country.population, 0);
       }
+    },
+    mounted(){
+      this.fetchCountries();
     },
     methods: {
       fetchCountries: function () {
