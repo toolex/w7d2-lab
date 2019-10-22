@@ -13,9 +13,12 @@
 
       <div>
         <h2>Select a Country</h2>
-        <select class="" name="">
-          <option v-for="country in countries" value=country.name>{{country.name}}</option>
+        <select id="chosen-country" v-on:change="selectCountry($event)">
+          <option v-for="(country, index) in countries" :value="index">{{country.name}}</option>
         </select>
+        <h3>Flag</h3>
+        <img id="chosen-country" v-if="chosenCountry" :src="chosenCountry.flag">
+         
       </div>
     </div>
   </body>
