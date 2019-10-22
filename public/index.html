@@ -14,7 +14,7 @@
       <div>
         <h2>Select a Country</h2>
         <select class="" name="">
-          <option value=""></option>
+          <option v-for="country in countries" value=country.name>{{country.name}}</option>
         </select>
       </div>
     </div>
